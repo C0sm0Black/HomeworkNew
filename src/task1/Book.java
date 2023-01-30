@@ -4,7 +4,7 @@ public class Book {
 
     private String name;
     private Author author;
-    int year;
+    private int year;
 
     public Book(String name, Author author, int year) {
 
