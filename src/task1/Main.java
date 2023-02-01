@@ -12,6 +12,15 @@ public class Main {
 
         book2.setYear(1971);
 
+        System.out.println(book1.toString());
+        System.out.println(book1.equals(book1));
+        System.out.println(book1.equals(book2));
+        System.out.println(author1.equals(author1));
+        System.out.println(book1.hashCode() == book2.hashCode());
+
+        System.out.println(book1.hashCode());
+        System.out.println(author1.hashCode());
+
     }
 
 }
