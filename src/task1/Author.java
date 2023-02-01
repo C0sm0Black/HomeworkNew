@@ -26,4 +26,16 @@ public class Author {
         this.firstName = firstName;
     }
 
+    public String toString () {
+        return this.firstName + " " + this.lastName;
+    }
+
+    public boolean equals(Author author) {
+        return this.lastName.equals(author.lastName) && this.firstName.equals(author.firstName);
+    }
+
+    public int hashCode() {
+        return java.util.Objects.hash(this.firstName, this.lastName);
+    }
+
 }

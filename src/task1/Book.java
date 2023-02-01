@@ -38,4 +38,15 @@ public class Book {
         this.year = year;
     }
 
+    public String toString () {
+        return "Название книги: " + this.name + ", автор книги: " + this.author.toString() + ", год издания: " + this.year;
+    }
+
+    public boolean equals(Book book) {
+        return this.name.equals(book.name) && this.author.equals(book.author) && this.year == book.year;
+    }
+
+    public int hashCode() {
+        return java.util.Objects.hash(this.name, this.author.hashCode(), this.year);
+    }
 }
