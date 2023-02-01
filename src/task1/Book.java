@@ -1,5 +1,7 @@
 package task1;
 
+import java.util.Objects;
+
 public class Book {
 
     private String name;
@@ -42,11 +44,16 @@ public class Book {
         return "Название книги: " + this.name + ", автор книги: " + this.author.toString() + ", год издания: " + this.year;
     }
 
-    public boolean equals(Book book) {
-        return this.name.equals(book.name) && this.author.equals(book.author) && this.year == book.year;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return year == book.year && name.equals(book.name) && author.equals(book.author);
     }
 
+    @Override
     public int hashCode() {
-        return java.util.Objects.hash(this.name, this.author.hashCode(), this.year);
+        return Objects.hash(name, author, year);
     }
 }

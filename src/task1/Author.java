@@ -1,5 +1,7 @@
 package task1;
 
+import java.util.Objects;
+
 public class Author {
 
     private String lastName;
@@ -30,12 +32,16 @@ public class Author {
         return this.firstName + " " + this.lastName;
     }
 
-    public boolean equals(Author author) {
-        return this.lastName.equals(author.lastName) && this.firstName.equals(author.firstName);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return lastName.equals(author.lastName) && firstName.equals(author.firstName);
     }
 
+    @Override
     public int hashCode() {
-        return java.util.Objects.hash(this.firstName, this.lastName);
+        return Objects.hash(lastName, firstName);
     }
-
 }
