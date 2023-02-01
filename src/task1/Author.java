@@ -5,7 +5,7 @@ public class Author {
     private String lastName;
     private String firstName;
 
-    public Author (String lastName, String firstName) {
+    public Author(String lastName, String firstName) {
         this.lastName = lastName;
         this.firstName = firstName;
     }
@@ -26,7 +26,7 @@ public class Author {
         this.firstName = firstName;
     }
 
-    public String toString () {
+    public String toString() {
         return this.firstName + " " + this.lastName;
     }
 
